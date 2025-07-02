@@ -1,7 +1,7 @@
 import os
 from PIL import Image
 
-FOLDER = "images"  # Folder containing the original images
+FOLDER = input("Enter follder name")  # Folder containing the original images
 
 # Sequential naming (optional)
 use_sequential_names = False
