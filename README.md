@@ -3,11 +3,6 @@
 ReSwapper aims to reproduce the implementation of inswapper. This repository provides code for training, inference, and includes pretrained weights.
 
 Here is the comparesion of the output of Inswapper and Reswapper.
-| Target | Source | Inswapper Output | Reswapper Output<br>(256 resolution)<br>(Step 1399500) | Reswapper Output<br>(Step 1019500) | Reswapper Output<br>(Step 429500) | 
-|--------|--------|--------|--------|--------|--------|
-| ![image](example/1/target.jpg) |![image](example/1/source.jpg) | ![image](example/1/inswapperOutput.jpg) | ![image](example/1/reswapperOutput-1399500_256.jpg) |![image](example/1/reswapperOutput-1019500.jpg) | ![image](example/1/reswapperOutput-429500.jpg) |
-| ![image](example/2/target.jpg) |![image](example/2/source.jpg) | ![image](example/2/inswapperOutput.jpg) | ![image](example/2/reswapperOutput-1399500_256.jpg) | ![image](example/2/reswapperOutput-1019500.jpg) | ![image](example/2/reswapperOutput-429500.jpg) |
-| ![image](example/3/target.jpg) |![image](example/3/source.png) | ![image](example/3/inswapperOutput.jpg) | ![image](example/3/reswapperOutput-1399500_256.jpg) | ![image](example/3/reswapperOutput-1019500.jpg) | ![image](example/3/reswapperOutput-429500.jpg) |
 
 ## Installation
 
@@ -72,9 +67,6 @@ The model architectures of InSwapper and SimSwap are extremely similar and worth
 ### Model output
 Model inswapper_128 not only changes facial features, but also body shape.
 
-| Target | Source | Inswapper Output | Reswapper Output<br>(Step 429500) |
-|--------|--------|--------|--------|
-| ![image](example/1/target.jpg) |![image](example/1/source.jpg) | ![image](example/1/inswapperOutput.gif) | ![image](example/1/reswapperOutput.gif) |
 
 ### Loss Functions
 There is no information released from insightface. It is an important part of the training. However, there are a lot of articles and papers that can be referenced. By reading a substantial number of articles and papers on face swapping, ID fidelity, and style transfer, you'll frequently encounter the following keywords:
@@ -122,15 +114,8 @@ Using images with different resolutions simultaneously to train the model will e
 
 Generalization ability of the model trained with resolutions of 128 and 256:
 
-| Output<br>resolution | 128 | 160 | 256 |
-|--------|--------|--------|--------|
-|Output| ![image](example/GeneralizationAbility/1399500_128.jpg) |![image](example/GeneralizationAbility/1399500_160.jpg) |![image](example/GeneralizationAbility/1399500_256.jpg) |
 
 Enhancing data diversity will improve output quality, you can pass "enableDataAugmentation" into the train function to perform data augmentation.
-
-| Target | Source | Inswapper Output | Reswapper Output<br>(Step 1567500) | Reswapper Output<br>(Step 1399500) |
-|--------|--------|--------|--------|--------|
-|![image](example/DataAugmentation/target.jpg)| ![image](example/DataAugmentation/source.jpg) |![image](example/DataAugmentation/inswapper_output.jpg) |![image](example/DataAugmentation/reswapper_256Output-1567500.jpg) | ![image](example/DataAugmentation/reswapper_256Output-1399500.jpg) |
 
 #### Notes
 - Do not stop the training too early.
@@ -168,9 +153,6 @@ latent += direction * face_attribute_steps
 
 Here is the output of Inswapper after modifying the source embedding
 
-| face_attribute_steps | 0 (Original output) | 0.25 | 0.5  | 0.75 | 1.0 |
-|--------|--------|--------|--------|--------|--------|
-|beard_direction.npy|![image](example/SourceEmbeddingModification/beard_0.0.jpg)|![image](example/SourceEmbeddingModification/beard_0.25.jpg)|![image](example/SourceEmbeddingModification/beard_0.5.jpg)|![image](example/SourceEmbeddingModification/beard_0.75.jpg)|![image](example/SourceEmbeddingModification/beard_1.0.jpg)|
 
 ## Pretrained Model
 ### 256 Resolution
