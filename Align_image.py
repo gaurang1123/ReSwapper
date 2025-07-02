@@ -5,8 +5,8 @@ from insightface.app import FaceAnalysis
 from insightface.utils import face_align
 
 # Configuration
-input_dir = 'images_jpg'
-output_dir = 'output_faces'
+input_dir = input("Enter follder name")
+output_dir = f"{input_dir}_aligned"
 gender_filter = 'female'  # options: 'male', 'female', or None for no filter
 
 os.makedirs(output_dir, exist_ok=True)
